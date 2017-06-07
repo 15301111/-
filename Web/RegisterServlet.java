@@ -1,9 +1,6 @@
 package Web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +10,7 @@ import Entity.User;
 import Service.UserService;
 
 
+@SuppressWarnings("serial")
 public class RegisterServlet extends HttpServlet{
 
     @Override

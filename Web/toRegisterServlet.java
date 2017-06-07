@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@SuppressWarnings("serial")
 public class ToRegisterServlet extends HttpServlet{
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

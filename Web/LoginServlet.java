@@ -2,15 +2,16 @@ package Web;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Service.UserService;
+import Utils.DBUtil;
 
 
+@SuppressWarnings("serial")
 public class LoginServlet extends HttpServlet {
 
   
@@ -30,33 +31,37 @@ public class LoginServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		
+		String role = "";
 		int userID = -1;
-		String message = "";
+		//String message = "";
 		
 		
 			UserService user = new UserService();
+			DBUtil util = new DBUtil();
 			if(user.login(name, password)){
-				userID = 1;
-				
+				userID = util.getUserID(name);
+				role = util.getRolenifo(userID);
 			}
 			
-			if(userID > 0){
+			if(role.equals("admin")){
+				System.out.println("this is test");
 				HttpSession session = null;
 				session = request.getSession();
 				
 				session.setAttribute("userName", name);
 				session.setAttribute("userID", userID);
 				
-				response.sendRedirect("toNewUser");
+				response.sendRedirect("toAdmin");
 						
-			}else{
-				message = "用户名或密码错误";
+			}else if(role.equals("operator")){
+				HttpSession session = null;
+				session = request.getSession();
 				
-				request.setAttribute("message",message);
-				request.setAttribute("UserName", name);
-				request.setAttribute("userID", userID);
+				session.setAttribute("userName", name);
+				session.setAttribute("userID", userID);
 				
-				request.getRequestDispatcher("/login.jsp").forward(request, response);
+				response.sendRedirect("toOperator");
+				
 			}
 		}
 

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.sun.org.apache.regexp.internal.RE;
+import com.sun.org.apache.regexp.internal.recompile;
 
 public class DBUtil {
 
@@ -81,15 +82,61 @@ public boolean Login(String name,String password){
 	while(rs.next()){
 		if(rs.getString("username").equals(name)&&rs.getString("password").equals(password)){
 			matchflag = true;
-		}
-	}
+	            	}
+	        }
 	
-} catch (SQLException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
+            } catch (SQLException e) {
+	           // TODO Auto-generated catch block
+	           e.printStackTrace();
+            }
 		
 		return matchflag;
 	}
+
+public String getRolenifo(int userID){
+	String dbrole = "";
+	ResultSet rs = null;
+	String sql = "select * from user where userID = ?";
+	
+	try(PreparedStatement pstmt = conn.prepareStatement(sql);){
+		pstmt.setInt(1, userID);
+		
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()){
+			if(rs.getInt("userID") == userID){
+				dbrole =rs.getString("role");
+			}
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	return dbrole;
+}
+
+
+public int getUserID(String name){
+
+	int dbuserID = 0;
+	
+	ResultSet rs = null;
+	String sql = "Select * from user where username = ?";
+	try(PreparedStatement pstmt = conn.prepareStatement(sql);){
+		pstmt.setString(1, name);
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()){
+			if(rs.getString("username").equals(name)){
+				dbuserID =rs.getInt("userID");
+			}
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return dbuserID;
+}
 
 }
