@@ -13,8 +13,9 @@ import Service.UserService;
 
 
 public class RegisterServlet extends HttpServlet{
-	
-	public void dopost(HttpServletRequest request, HttpServletResponse respose) throws ServletException, IOException{
+
+    @Override
+	public void doPost(HttpServletRequest request, HttpServletResponse respose) throws ServletException, IOException{
 		request.setCharacterEncoding("UTF-8");
 		
 		String name = request.getParameter("name");
@@ -39,9 +40,10 @@ public class RegisterServlet extends HttpServlet{
 			user.setName(name);
 			user.setPassword(password);
 			
+			
 			flag = userService.register(name, password);
 			if(flag){
-				System.out.println("×¢²á³É¹¦£¡");
+				//System.out.println("×¢²á³É¹¦£¡");
 				massage = "×¢²á³É¹¦";
 			}else{
 				System.out.println("×¢²áÊ§°Ü");
@@ -50,7 +52,7 @@ public class RegisterServlet extends HttpServlet{
 		}
 		request.setAttribute("massage", massage);
 		
-		request.getRequestDispatcher("/toRegister").forward(request, respose);
+		request.getRequestDispatcher("/toregister").forward(request, respose);
 	}
 	
 	
