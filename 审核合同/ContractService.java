@@ -56,4 +56,18 @@ public class ContractService {
 		//返回需要审批的合同list
 		return aCConList;
 	}
+	
+	public Contract getContract(int id) throws AppException {
+		Contract contract = null;
+		ContractDao contractDao = new ContractDao();
+		
+		try {
+			contract = contractDao.getById(id);
+		} catch (AppException e) {
+			e.printStackTrace();
+			throw new AppException(
+					"ContractService.getContract");
+		}
+		return contract;
+	}
 }
