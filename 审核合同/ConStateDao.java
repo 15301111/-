@@ -15,11 +15,7 @@ import Utils.JDBC;
 
 //获取t_contract_state数据
 public class ConStateDao{
-	boolean flag = false;
-	
-	Connection conn = null;
-	PreparedStatement psmt = null;
-		
+	boolean flag = false;	
 		
 	public ConState getConState(int conId, int type) throws AppException {
 		ConState conState = new ConState();
@@ -50,7 +46,7 @@ public class ConStateDao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new AppException(
-					"com.ruanko.dao.impl.ConStateDaoImpl.getByConId");
+					"ConStateDao.getByConId");
 			} finally {
 				DBUtil.closeResultSet(rs);
 				DBUtil.closeStatement(psmt);
@@ -90,6 +86,35 @@ public class ConStateDao{
 			"ConStateDao.isExist");
 		} finally {
 			DBUtil.closeResultSet(rs);
+			DBUtil.closeStatement(psmt);
+			DBUtil.closeConnection(conn);
+		}
+		return flag;
+	}
+	
+	public boolean add(ConState conState) throws AppException{	
+		boolean flag = false;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		
+		try {
+			conn = JDBC.getConnection();
+			String sql = "insert into t_contract_state(con_id,type) values(?,?)";
+				
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, conState.getConId());
+			psmt.setInt(2, conState.getType());
+		
+			int result = psmt.executeUpdate();
+			
+			if(result > 0){
+				flag = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(
+			"ConStateDao.add");
+		} finally {
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
 		}
