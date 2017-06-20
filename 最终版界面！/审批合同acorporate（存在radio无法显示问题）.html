@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Forty by HTML5 UP</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  -webkit-appearance: radio;
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>ºÏÍ¬¹ÜÀí</strong> <span>by µÚ¶þÐ¡×é</span></a>
+						<nav>
+							<a href="#menu">²Ëµ¥</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">µÇÂ¼½çÃæ</a></li>
+							<li><a href="landing.html">Ö÷½çÃæ</a></li>
+							<li><a href="generic.html">×¢²á½çÃæ</a></li>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>ÉóÅúºÏÍ¬</h1>
+									</header>
+									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+    <form name="addSHPOpinionForm" action="toApproving" method="post">
+			<%
+				Contract contract = (Contract)request.getAttribute("contract");
+			%>
+			<input type="hidden" name="conId" value="<%=contract.getId()%>">
+			<table class="update" style="width:600px;">	
+				<tr height="28">
+					<td >Contract name:</td>
+					<td><%=contract.getName()%></td>
+				</tr>
+				<tr>
+					<td>
+                                                  
+						&nbsp;<input name="approve" type="radio" value="true" style=" resize: none;" checked="checked"/>
+						Í¨¹ý
+						<br /><br />
+						&nbsp;<input name="approve" type="radio" style=" resize: none;" value="false" />
+					        ¾Ü¾ø
+					</td>
+					<td>
+						<textarea rows="10" cols="40" id="content" name="content"
+							style="width: 400px; height: 100px; resize: none;"></textarea>
+					</td>
+				</tr>
+				<tr height="28">
+					<td align="center" colspan="2">
+						<input type="submit" value="Ìá½»" class="button" onclick="return check()">
+						 &nbsp; &nbsp; &nbsp;
+						<input type="reset" value="ÖØÐ´" class="button">
+					</td>
+				</tr>
+			</table>
+		</form>
+								</div>
+							</section>
+
+					</div>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Zzk</li>
+								<li>Design: <a href="https://user.qzone.qq.com/656028284">ÕÅ×Ó¿ª</a></li>
+								
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
