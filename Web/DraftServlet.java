@@ -19,6 +19,13 @@ import Service.ContractService;
 public class DraftServlet extends HttpServlet {
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7756117054192244809L;
+	private ContractService contractService = new ContractService();
+
+
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.doPost(request, response);
 	}
@@ -42,6 +49,8 @@ public class DraftServlet extends HttpServlet {
 			String content = request.getParameter("content");
 			String beginTime = request.getParameter("beginTime");
 			String endTime = request.getParameter("endTime");
+			String breachString = request.getParameter("chengfa");
+			int breach = Integer.parseInt(breachString);
 			
 			Date begin = new Date();
 			Date end =new Date();
@@ -61,9 +70,9 @@ public class DraftServlet extends HttpServlet {
 				contract.setContent(content);
 				contract.setBeginTime(begin);
 				contract.setEndTime(end);
+				contract.setBreach(breach);
 				
-				ContractService contractservice = new ContractService();
-				if(contractservice.Draft(contract)){
+				if(contractService.Draft(contract)){
 					System.out.println("起草成功！");
 					message = "起草成功";
 					
@@ -72,11 +81,9 @@ public class DraftServlet extends HttpServlet {
 					message = "起草失败";
 				}
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			request.setAttribute("message", message);
-			request.getRequestDispatcher("addContract.jsp").forward(request, response);
+			request.getRequestDispatcher("landing.html").forward(request, response);
 	    }
 	}
 

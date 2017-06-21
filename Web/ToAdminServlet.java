@@ -23,7 +23,7 @@ public class ToAdminServlet extends HttpServlet {
 		if(userID == null){
 			response.sendRedirect("toLogin");
 		}else{
-			request.getRequestDispatcher("/frame1.jsp").forward(request, response);
+			request.getRequestDispatcher("/π‹¿Ì‘±.html").forward(request, response);
 		}
 		
 	}

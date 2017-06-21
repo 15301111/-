@@ -2,19 +2,20 @@ package Entity;
 
 public class User {
 
-	private int id;
 	String name;
 	String password;
+	private int id;
 	
 	public void setId(int id){
 		this.id = id;
 	}
 	
-	public int getId(){
-		return id;
-	}
 	public void setName(String Name){
 		this.name = Name;
+	}
+	
+	public int getId(){
+		return id;
 	}
 	
 	public void setPassword(String Password){

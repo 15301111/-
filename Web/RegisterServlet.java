@@ -53,7 +53,7 @@ public class RegisterServlet extends HttpServlet{
 		request.setAttribute("massage", massage);
 		//System.out.println(request.getAttribute("massage")+"this is test");
 		
-		request.getRequestDispatcher("/toregister").forward(request, response);
+		request.getRequestDispatcher("/toLogin").forward(request, response);
 	}
 	
 	

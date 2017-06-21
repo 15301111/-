@@ -8,15 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet for accessing contract operator page
- */
-@SuppressWarnings("serial")
-public class ToOperatorServlet extends HttpServlet {
+import Entity.Contract;
+import Service.ContractService;
+import Utils.AppException;
 
-	/**
-	 * Jump to contract operator page
-	 */
+public class ToSignServlet extends HttpServlet {
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -27,11 +24,24 @@ public class ToOperatorServlet extends HttpServlet {
 		
 		if (userId == null) {
 			response.sendRedirect("toLogin");
-		}else {
-			request.getRequestDispatcher("/landing.html").forward(request, response);
+		} else {
+
+			int conId = Integer.parseInt(request.getParameter("conId"));
+
+			try {
+				ContractService contractService = new ContractService();
+				Contract contract = contractService.getContract(conId);
+
+				request.setAttribute("contract", contract);
+				request.getRequestDispatcher("/给脸哥（原sign）需要被跳转到.jsp").forward(
+						request, response);
+			} catch (AppException e) {
+				e.printStackTrace();
+				response.sendRedirect("toError");
+			}
 		}
 	}
-	
+
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		this.doPost(request, response);

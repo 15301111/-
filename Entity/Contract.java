@@ -2,82 +2,84 @@ package Entity;
 
 import java.util.Date;
 
+/**
+ * Contract entity classes
+ */
 public class Contract {
-	private int id;
-	private int userID;
-	private String customername;
-	//private String number;
-	private String contractname;
-	private Date begintime;
-	private Date endtime;
-	private String content;
-	
-	
-	public Contract(){
-		id = 0;
-		userID = 0;
-		customername = "";
-		//number = "";
-		contractname = "";
-		begintime = new Date();
-		endtime = new Date();
-		content = "";
+	private int id; 			//ID
+	private int userId; 		// User id
+	private String customer; 	// Customer		// Contract number
+	private String name; 		// Contract name
+	private Date beginTime; 	// Begin time
+	private Date endTime; 		// End time
+	private String content; 	// Contract content
+	private int del; 	
+	private int breach;// Delete status(0-Not deleted, 1-Deleted)
+
+	/**
+	 * No-arg constructor assigns initial values to object attributes
+	 */
+	public Contract() {
+		this.id = 0;
+		this.userId = 0;
+		this.customer = "";
+		this.name = "";
+		this.beginTime = new Date();
+		this.endTime = new Date();
+		this.content = "";
+		this.del = 0;
+		this.breach = 0;
 	}
-	
-	public void setId(int ID){
-		this.id = ID;
-	}
-	
-	public int getId(){
+
+	/*
+	 * Provide setter and getter methods for attributes,setter is used for setting the attribute's value, getter is used for getting the attribute's value
+	 */
+	public int getId() {
 		return id;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public int getUserId() {
-		return userID;
+		return userId;
 	}
 
 	public void setUserId(int userId) {
-		this.userID = userId;
+		this.userId = userId;
 	}
 
 	public String getCustomer() {
-		return customername;
+		return customer;
 	}
 
 	public void setCustomer(String customer) {
-		this.customername = customer;
+		this.customer = customer;
 	}
 
-	//public String getNum() {
-	//	return number;
-	//}
-
-	//public void setNum(String num) {
-	//	this.number = num;
-	//}
-
 	public String getName() {
-		return contractname;
+		return name;
 	}
 
 	public void setName(String name) {
-		this.contractname = name;
+		this.name = name;
 	}
 
 	public Date getBeginTime() {
-		return begintime;
+		return beginTime;
 	}
 
 	public void setBeginTime(Date beginTime) {
-		this.begintime = beginTime;
+		this.beginTime = beginTime;
 	}
 
 	public Date getEndTime() {
-		return endtime;
+		return endTime;
 	}
 
 	public void setEndTime(Date endTime) {
-		this.endtime = endTime;
+		this.endTime = endTime;
 	}
 
 	public String getContent() {
@@ -88,4 +90,19 @@ public class Contract {
 		this.content = content;
 	}
 
+	public int getDel() {
+		return del;
+	}
+
+	public void setDel(int del) {
+		this.del = del;
+	}
+	
+	public int getBreach() {
+		return breach;
+	}
+
+	public void setBreach(int breach) {
+		this.breach = breach;
+	}
 }

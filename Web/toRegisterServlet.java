@@ -16,6 +16,6 @@ public class ToRegisterServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		System.out.println("this is my test2");
-		request.getRequestDispatcher("/register.jsp").forward(request, response);
+		request.getRequestDispatcher("/зЂВс.html").forward(request, response);
 	}
 }

@@ -1,7 +1,10 @@
-package Entity;
+package Utils;
 
+/**
+ * Constants defined class
+ */
 public class Constant {
-
+	
 	//Contract state table's type[t_contract_state.type]
 	public static final int STATE_DRAFTED = 1;			// Draft
 	public static final int STATE_CSIGNED = 2;			// Countersigned
@@ -12,10 +15,12 @@ public class Constant {
 	//Contract process table's type[t_contract_process.type]
 	public static final int PROCESS_CSIGN = 1;			// Countersign
 	public static final int PROCESS_APPROVE = 2;		// Approve
-	public static final int PROCESS_SIGN = 3;			// Sign
+	public static final int PROCESS_SIGN = 3;		
+	public static final int PROCESS_breach = 4;
 	
 	//Contract process table's state[t_contract_process.state]
 	public static final int UNDONE = 0;					// Unfinished
 	public static final int DONE = 1;					// Completed
 	public static final int VETOED = 2;					// Rejected
+	
 }
