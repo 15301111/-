@@ -1,5 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@page import="com.ruanko.model.Contract;"%>
+<%@page import="Entity.Contract"%>
 <!DOCTYPE HTML>
 <!--
 	Forty by HTML5 UP
@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>��ǩ��ͬ</title>
+		<title>会签合同</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -30,18 +30,18 @@ function check(){
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>��ͬ����</strong> <span>by �ڶ�С��</span></a>
+						<a href="index.html" class="logo"><strong>合同管理</strong> <span>by 第二小组</span></a>
 						<nav>
-							<a href="#menu">�˵�</a>
+							<a href="#menu">菜单</a>
 						</nav>
 					</header>
 
 				<!-- Menu -->
 					<nav id="menu">
 						<ul class="links">
-							<li><a href="index.html">��¼����</a></li>
-							<li><a href="landing.html">������</a></li>
-							<li><a href="generic.html">ע�����</a></li>
+							<li><a href="index.html">登录界面</a></li>
+							<li><a href="landing.html">主界面</a></li>
+							<li><a href="generic.html">注册界面</a></li>
 					</nav>
 
 				<!-- Main -->
@@ -51,7 +51,7 @@ function check(){
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>��ǩ��ͬ</h1>
+										<h1>会签合同</h1>
 									</header>
 									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
     <form name="addHQOpinionForm" action="addHQOpinion" method="post">
@@ -61,20 +61,20 @@ function check(){
 			<input type="hidden" name="conId" value="<%=contract.getId()%>">
 			<table class="update" style="width:680px;">	
 				<tr height="28">
-					<td width="180px">��ͬ����:</td>
+					<td width="180px">合同名字:</td>
 					<td><%=contract.getName()%></td>
 				</tr>
 				<tr>
-					<td>��ǩ����:</td>	
+					<td>会签建议:</td>	
 					<td>
 						<textarea rows="10" cols="40" id="content" name="content" style="width:400px;height:100px;resize: none;"></textarea>
 					</td>
 				</tr>
 				<tr height="28">
 					<td align="center" colspan="2">
-						<input type="submit" value="�ύ" class="button" onclick="return check()">
+						<input type="submit" value="提交" class="button" onclick="return check()">
 						 &nbsp; &nbsp; &nbsp;
-						<input type="reset" value="ȡ��" class="button">
+						<input type="reset" value="取消" class="button">
 					</td>
 				</tr>
 			</table>
@@ -97,7 +97,7 @@ function check(){
 							</ul>
 							<ul class="copyright">
 								<li>&copy; Zzk</li>
-								<li>Design: <a href="https://user.qzone.qq.com/656028284">���ӿ�</a></li>
+								<li>Design: <a href="https://user.qzone.qq.com/656028284">张子开</a></li>
 								
 							</ul>
 						</div>

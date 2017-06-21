@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>��Ҫǩ���ĺ�ͬ</title>
+		<title>需要签订的合同</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,18 +22,18 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>��ͬ����</strong> <span>by �ڶ�С��</span></a>
+						<a href="index.html" class="logo"><strong>合同管理</strong> <span>by 第二小组</span></a>
 						<nav>
-							<a href="#menu">�˵�</a>
+							<a href="#menu">菜单</a>
 						</nav>
 					</header>
 
 				<!-- Menu -->
 					<nav id="menu">
 						<ul class="links">
-							<li><a href="index.html">��¼����</a></li>
-							<li><a href="landing.html">������</a></li>
-							<li><a href="generic.html">ע�����</a></li>
+							<li><a href="index.html">登录界面</a></li>
+							<li><a href="landing.html">主界面</a></li>
+							<li><a href="generic.html">注册界面</a></li>
 					</nav>
 
 				<!-- Main -->
@@ -43,12 +43,12 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>��Ҫǩ���ĺ�ͬ</h1>
+										<h1>需要签订的合同</h1>
 									</header>
 									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
                  <div class="search">
 			<form>
-				������Ҫǩ���ĺ�ͬ:
+				搜索需要签订的合同:
 				<input value="Enter search conditions.." />
 				&nbsp;&nbsp;
 				<input type="submit" value="Search" class="search-submit"/> <br />
@@ -59,13 +59,13 @@
 		  <table>
 			<tr>
 				<th>
-					��ͬ����
+					合同名称
 				</th>
 				<th class="th1">
-					�ⶨʱ��
+					拟定时间
 				</th>
 				<th  class="th1">
-					����
+					操作
 				</th>
 			</tr>
 			<%
@@ -82,7 +82,7 @@
 				<td>
 					<a href="toSign?conId=<%=cbm.getConId()%>">
 						<img src="images/icon-edit.png"  alt="Sign" />
-						ǩ��
+						签订
 					</a>
 				</td>
 			</tr>
@@ -121,7 +121,7 @@
 							</ul>
 							<ul class="copyright">
 								<li>&copy; Zzk</li>
-								<li>Design: <a href="https://user.qzone.qq.com/656028284">���ӿ�</a></li>
+								<li>Design: <a href="https://user.qzone.qq.com/656028284">张子开</a></li>
 								
 							</ul>
 						</div>

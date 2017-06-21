@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@page import="com.ruanko.model.ConBusiModel;"%>
+<%@page import="Entity.CBEntity"%>
 <!DOCTYPE HTML>
 <!--
 	Forty by HTML5 UP
@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>ĞèÒª±»»áÇ©µÄºÏÍ¬</title>
+		<title>éœ€è¦è¢«ä¼šç­¾çš„åˆåŒ</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,18 +22,18 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>ºÏÍ¬¹ÜÀí</strong> <span>by µÚ¶şĞ¡×é</span></a>
+						<a href="index.html" class="logo"><strong>åˆåŒç®¡ç†</strong> <span>by ç¬¬äºŒå°ç»„</span></a>
 						<nav>
-							<a href="#menu">²Ëµ¥</a>
+							<a href="#menu">èœå•</a>
 						</nav>
 					</header>
 
 				<!-- Menu -->
 					<nav id="menu">
 						<ul class="links">
-							<li><a href="index.html">µÇÂ¼½çÃæ</a></li>
-							<li><a href="landing.html">Ö÷½çÃæ</a></li>
-							<li><a href="generic.html">×¢²á½çÃæ</a></li>
+							<li><a href="index.html">ç™»å½•ç•Œé¢</a></li>
+							<li><a href="landing.html">ä¸»ç•Œé¢</a></li>
+							<li><a href="generic.html">æ³¨å†Œç•Œé¢</a></li>
 					</nav>
 
 				<!-- Main -->
@@ -43,15 +43,15 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>ĞèÒª±»»áÇ©µÄºÏÍ¬</h1>
+										<h1>éœ€è¦è¢«ä¼šç­¾çš„åˆåŒ</h1>
 									</header>
 									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
     <div class="search">
 			<form>
-				ËÑË÷Òª±»»áÇ©µÄºÏÍ¬:
-				<input value="ÊäÈëËÑË÷Ìõ¼ş.." />
+				æœç´¢è¦è¢«ä¼šç­¾çš„åˆåŒ:
+				<input value="è¾“å…¥æœç´¢æ¡ä»¶.." />
 				&nbsp;&nbsp;
-				<input type="submit" value="ËÑË÷" class="search-submit"/> <br />
+				<input type="submit" value="æœç´¢" class="search-submit"/> <br />
 			</form>
 		</div>
 		
@@ -59,18 +59,18 @@
 		  <table>
 			<tr>
 				<th>
-					ºÏÍ¬Ãû×Ö
+					åˆåŒåå­—
 				</th>
 				<th class="th1">
-					²İÄâÊ±¼ä
+					è‰æ‹Ÿæ—¶é—´
 				</th>
 				<th class="th2">
-					²Ù×÷
+					æ“ä½œ
 				</th>
 			</tr>
 			<%
-				List<ConBusiModel> contractList = (List<ConBusiModel>)request.getAttribute("contractList");  
-		        for (ConBusiModel cbm : contractList) {
+				List<CBEntity> contractList = (List<CBEntity>)request.getAttribute("contractList");  
+		        for (CBEntity cbm : contractList) {
        	 	%>
 			<tr>
 				<td class="tdname">
@@ -82,7 +82,7 @@
 				<td>
 					<a href="toAddHQOpinion?conId=<%=cbm.getConId()%>">
 						<img src="images/icon-edit.png"  alt="Countersign" />
-						 »áÇ©
+						 ä¼šç­¾
 					</a>
 				</td>
 			</tr>
@@ -122,7 +122,7 @@
 							</ul>
 							<ul class="copyright">
 								<li>&copy; Zzk</li>
-								<li>Design: <a href="https://user.qzone.qq.com/656028284">ÕÅ×Ó¿ª</a></li>
+								<li>Design: <a href="https://user.qzone.qq.com/656028284">å¼ å­å¼€</a></li>
 								
 							</ul>
 						</div>
